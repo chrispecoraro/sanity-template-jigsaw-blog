@@ -1,7 +1,7 @@
 {
-  "version": 0,
-  "title": "Blog with Jigsaw",
-  "description": "Fully customizable blog template with a Jigaw front-end.",
+  "version": 2,
+  "title": "Sanity.io starter template for Jigsaw",
+  "description": "Fully customizable blog template with a Jigsaw front-end.",
   "previewMedia": {
     "type": "image",
     "src": "assets/frontend.png",
@@ -19,47 +19,49 @@
       "url": "https://www.netlify.com/"
     }
   ],
-  "deployments": [
-    {
-      "id": "studio",
-      "type": "studio",
-      "title": "Sanity Studio",
-      "description": "The Sanity Studio is where you edit and structure your content.",
-      "dir": "./studio",
-      "provider": {
-        "name": "netlify",
-        "config": {
+  "deployment": {
+    "provider": "netlify",
+    "sites": [
+      {
+        "id": "studio",
+        "type": "studio",
+        "title": "Sanity Studio",
+        "description": "The Sanity Studio is where you edit and structure your content.",
+        "dir": "./studio",
+        "previewMedia": {
+          "type": "image",
+          "src": "assets/backend.png",
+          "alt": "A preview image  of the Sanity Studio."
+        },
+        "buildSettings": {
           "base": "/",
           "dir": "/studio/dist",
-          "cmd": "npm run build-studio && cp studio/netlify.toml studio/dist"
-        },
-        "requirements": ["build-hook"]
-      },
-      "previewMedia": {
-        "type": "image",
-        "src": "assets/backend.png",
-        "alt": "A preview image  of the Sanity Studio."
-      }
-    },
-    {
-      "id": "web",
-      "type": "web",
-      "title": "Blog Website",
-      "description": "A blazing fast blog, made for being easy to customize and update.",
-      "dir": "./jigsaw",
-      "provider": {
-        "name": "netlify",
-        "config": {
-          "base": "/",
-          "dir": "build_production",
-          "cmd": "npm run production"
+          "cmd": "npm run build-studio && cp studio/netlify.toml studio/dist",
+          "requirements": [
+            "build-hook"
+          ]
         }
       },
-      "previewMedia": {
-        "type": "image",
-        "src": "assets/frontend.jpg",
-        "alt": "A preview image of the blog website."
+      {
+        "id": "web",
+        "type": "web",
+        "title": "Blog Website",
+        "requirements": [
+          "build-hook"
+        ],
+        "description": "A blazing fast blog, made for being easy to customize and update.",
+        "dir": "./web",
+        "buildSettings": {
+          "base": "web",
+          "dir": "build_production",
+          "cmd": "npm run production"
+        },
+        "previewMedia": {
+          "type": "image",
+          "src": "assets/frontend.png",
+          "alt": "A preview image of the webpage."
+        }
       }
-    }
-  ]
+    ]
+  }
 }
