@@ -53,7 +53,7 @@
           "base": "/",
           "dir": "build_production",
           "cmd": "npm run production",
-          "env" : '{PHP_VERSION: '7.4'}"
+          "env" : "{PHP_VERSION: '7.4'}"
         }
       },
       "previewMedia": {
