@@ -1,0 +1,30 @@
+{
+  "root": true,
+  "project": {
+    "name": "Netlify POC"
+  },
+  "api": {
+    "projectId": "jmhf2rn8",
+    "dataset": "netlify-poc"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    }
+  ]
+}
