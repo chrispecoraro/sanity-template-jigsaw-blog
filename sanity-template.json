@@ -36,11 +36,11 @@
         "buildSettings": {
           "base": "/",
           "dir": "/studio/dist",
-          "cmd": "npm run build-studio && cp studio/netlify.toml studio/dist",
-          "requirements": [
-            "build-hook"
-          ]
-        }
+          "cmd": "npm run build-studio && cp studio/netlify.toml studio/dist"
+        },
+        "requirements": [
+          "build-hook"
+        ]
       },
       {
         "id": "web",
