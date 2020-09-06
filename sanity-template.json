@@ -41,24 +41,8 @@
         "requirements": [
           "build-hook"
         ]
-      },
-      {
-        "id": "web",
-        "type": "web",
-        "title": "Blog Website",
-        "description": "A blazing fast blog, made for being easy to customize and update.",
-        "dir": "./web",
-        "buildSettings": {
-          "base": "web",
-          "dir": "build_production",
-          "cmd": "npm run production"
-        },
-        "previewMedia": {
-          "type": "image",
-          "src": "assets/frontend.png",
-          "alt": "A preview image of the webpage."
-        }
       }
+
     ]
   }
 }
