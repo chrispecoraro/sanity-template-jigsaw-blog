@@ -1,0 +1,66 @@
+{
+  "version": 0,
+  "title": "Blog with Jigsaw",
+  "description": "Fully customizable blog template with a Jigaw front-end.",
+  "previewMedia": {
+    "type": "image",
+    "src": "assets/frontend.png",
+    "alt": "A screenshot of the Blog with Jigsaw website."
+  },
+  "technologies": [
+    {
+      "id": "Jigsaw",
+      "name": "Jigsaw",
+      "url": "https://jigsaw.tighten.co/"
+    },
+    {
+      "id": "netlify",
+      "name": "Netlify",
+      "url": "https://www.netlify.com/"
+    }
+  ],
+  "deployments": [
+    {
+      "id": "studio",
+      "type": "studio",
+      "title": "Sanity Studio",
+      "description": "The Sanity Studio is where you edit and structure your content.",
+      "dir": "./studio",
+      "provider": {
+        "name": "netlify",
+        "config": {
+          "base": "/",
+          "dir": "/studio/dist",
+          "cmd": "npm run build-studio && cp studio/netlify.toml studio/dist"
+        },
+        "requirements": ["build-hook"]
+      },
+      "previewMedia": {
+        "type": "image",
+        "src": "assets/backend.png",
+        "alt": "A preview image  of the Sanity Studio."
+      }
+    },
+    {
+      "id": "web",
+      "type": "web",
+      "title": "Blog Website",
+      "description": "A blazing fast blog, made for being easy to customize and update.",
+      "dir": "./jigsaw",
+      "provider": {
+        "name": "netlify",
+        "config": {
+          "base": "/",
+          "dir": "build_production",
+          "cmd": "npm run production",
+          "env" : '{PHP_VERSION: '7.4'}"
+        }
+      },
+      "previewMedia": {
+        "type": "image",
+        "src": "assets/frontend.jpg",
+        "alt": "A preview image of the blog website."
+      }
+    }
+  ]
+}
