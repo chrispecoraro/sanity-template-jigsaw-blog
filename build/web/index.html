@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Minimal template starter example</title>
+  </head>
+  <body>
+    <pre id="root">
+      Let’s load some content over APIs!
+    </pre>
+  </body>
+  <script>
+    async function loadContent() {
+      const { result } = await fetch(
+        "https://jmhf2rn8.api.sanity.io/v1/data/query/netlify-poc?query=*[0]"
+      )
+        .then((data) => data.json())
+        .then((data) => console.log(data) || data)
+        .catch((error) => console.error(error));
+      const root = document.querySelector("#root");
+      root.textContent = JSON.stringify(result, null, 2);
+    }
+    loadContent();
+  </script>
+</html>
