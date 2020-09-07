@@ -12,7 +12,8 @@ export default {
     {
       name: 'extends',
       title: 'Extends',
-      type: 'string'
+      type: 'string',
+      hidden: true
     }
     ,
     {

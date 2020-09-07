@@ -39,14 +39,12 @@
                 <div id="vue-search" class="flex flex-1 justify-end items-center">
                     <search></search>
 
-                    @include('_nav.menu')
 
                     @include('_nav.menu-toggle')
                 </div>
             </div>
         </header>
 
-        @include('_nav.menu-responsive')
 
         <main role="main" class="flex-auto w-full container max-w-4xl mx-auto py-16 px-6">
             @yield('body')
