@@ -33,19 +33,23 @@
           "dir": "dist",
           "cmd": "npm run build && cp netlify.toml dist"
         },
-        "requirements": ["build-hook"]
+        "requirements": [
+          "build-hook"
+        ]
       },
       {
         "id": "web",
         "type": "web",
         "title": "Blog Website",
-        "requirements": ["build-hook"],
         "description": "A minimal example of a frontend fetching data from Sanity.io.",
         "dir": "./web",
         "buildSettings": {
           "base": "web",
           "dir": "build_production",
-          "cmd": "npm build production"
+          "cmd": "npm build production",
+          "env": {
+            "PHP_VERSION": 7.4
+          }
         },
         "previewMedia": {
           "type": "image",
