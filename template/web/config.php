@@ -5,7 +5,7 @@ use Sanity\Client;
 use Sanity\BlockContent;
 
 return [
-    'baseUrl' => '',
+    'baseUrl' => '/',
     'production' => false,
     'siteName' => 'Blog Starter Template',
     'siteDescription' => 'Generate an elegant blog with Jigsaw and Sanity',
