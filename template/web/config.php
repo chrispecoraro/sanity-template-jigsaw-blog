@@ -28,7 +28,6 @@ return [
                 $client = new Client([
                     'projectId' => $projectId,
                     'dataset' => $dataset,
-                    'useCdn' => true,
                     'apiVersion' => (new Datetime)->format('Y-m-d'),
                 ]);
 
