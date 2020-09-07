@@ -4,8 +4,8 @@ use Illuminate\Support\Str;
 use Sanity\Client;
 use Sanity\BlockContent;
 
-$projectId = <#< sanity.projectId >#>;
-$dataset = <#< sanity.dataset >#>;
+$projectId = '<#< sanity.projectId >#>';
+$dataset = '<#< sanity.dataset >#>';
 
 return [
     'baseUrl' => '',
