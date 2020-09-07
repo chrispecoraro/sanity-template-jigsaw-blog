@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "title": "Sanity.io starter template for Netlify",
+  "title": "Sanity.io starter template for Jigsaw",
   "description": "Minimal and barebones example of a starter for deployment on Netlify",
   "previewMedia": {
     "type": "image",
@@ -9,9 +9,9 @@
   },
   "technologies": [
     {
-      "id": "netlify",
-      "name": "Netlify",
-      "url": "https://www.netlify.com/"
+      "id": "jigsaw",
+      "name": "jigsaw",
+      "url": "https://jigsaw.tighten.co"
     }
   ],
   "deployment": {
