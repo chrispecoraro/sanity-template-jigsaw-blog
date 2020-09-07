@@ -9,9 +9,9 @@
   },
   "technologies": [
     {
-      "id": "netlify",
-      "name": "Netlify",
-      "url": "https://www.netlify.com/"
+      "id": "jigsaw",
+      "name": "Jigsaw",
+      "url": "https://jigsaw.tighten.co"
     }
   ],
   "deployment": {
