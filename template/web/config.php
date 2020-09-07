@@ -22,8 +22,8 @@ return [
             'extends' => '_layouts.post',
             'items' => function ($config){
 
-                $projectId = '8h1u84cx';
-                $dataset = 'production';
+                $projectId = '<#< sanity.projectId >#>';
+                $dataset = '<#< sanity.dataset >#>';
 
                 $client = new Client([
                     'projectId' => $projectId,
