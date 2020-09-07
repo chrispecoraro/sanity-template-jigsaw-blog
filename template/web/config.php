@@ -4,6 +4,9 @@ use Illuminate\Support\Str;
 use Sanity\Client;
 use Sanity\BlockContent;
 
+$projectId = <#< sanity.projectId >#>;
+$dataset = <#< sanity.dataset >#>;
+
 return [
     'baseUrl' => '',
     'production' => false,
@@ -20,10 +23,10 @@ return [
 
         'posts' => [
             'extends' => '_layouts.post',
-            'items' => function ($config) {
+            'items' => function ($config) use ($projectId, $dataset){
                 $client = new Client([
-                    'projectId' => '8h1u84cx',
-                    'dataset' => 'production',
+                    'projectId' => $projectId,
+                    'dataset' => $dataset,
                     'useCdn' => true,
                     'apiVersion' => (new Datetime)->format('Y-m-d'),
                 ]);
@@ -32,14 +35,14 @@ return [
                     '*[_type == "post"]{categories[]->{title},author->{name},"cover_image_url": cover_image.asset->url,...}'
                 );
 
-                return collect($posts)->map(function ($post) {
+                return collect($posts)->map(function ($post) use ($projectId, $dataset){
 
                     return [
                         'title' => $post['title'],
                         'content' =>
                             BlockContent::toHtml($post['body'], [
-                                'projectId' => '8h1u84cx',
-                                'dataset' => 'production',
+                                'projectId' => $projectId,
+                                'dataset' => $dataset,
                             ]),
                         'categories' => collect($post['categories'])->map(fn($category) => $category['title']),
                         'date' => Datetime::createFromFormat('Y-m-d', $post['date'])->getTimestamp(),
