@@ -4,9 +4,6 @@ use Illuminate\Support\Str;
 use Sanity\Client;
 use Sanity\BlockContent;
 
-$projectId = '<#< sanity.projectId >#>';
-$dataset = '<#< sanity.dataset >#>';
-
 return [
     'baseUrl' => '',
     'production' => false,
@@ -23,7 +20,11 @@ return [
 
         'posts' => [
             'extends' => '_layouts.post',
-            'items' => function ($config) use ($projectId, $dataset){
+            'items' => function ($config){
+
+                $projectId = '<#< sanity.projectId >#>';
+                $dataset = '<#< sanity.dataset >#>';
+
                 $client = new Client([
                     'projectId' => $projectId,
                     'dataset' => $dataset,
