@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "title": "Sanity.io starter template for Jigsaw",
-  "description": "Minimal and barebones example of a starter for deployment on Netlify",
+  "title": "Sanity.io starter template with Jigsaw",
+  "description": "Jigsaw (https://jigsaw.tighten.co) starter kit which sources content from Sanity (https://sanity.io) deployed on Netlify",
   "previewMedia": {
     "type": "image",
     "src": "assets/frontend.png",
